@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un Mensaje para tu 2026 | Homero Sánchez y Familia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700;800&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --love-red: #FF6B8B;
+            --hope-green: #4ECDC4;
+            --peace-blue: #1A535C;
+            --joy-yellow: #FFE66D;
+            --spirit-purple: #9B5DE5;
+            --warm-white: #F7FFF7;
+            --deep-night: #1A1A2E;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, var(--deep-night) 0%, var(--peace-blue) 100%);
+            color: var(--warm-white);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        /* Efectos de fondo */
+        .floating-hearts, .twinkling-stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .heart, .star {
+            position: absolute;
+            opacity: 0;
+            animation: floatUp 15s linear infinite;
+        }
+        
+        .heart {
+            color: var(--love-red);
+            font-size: 1.5rem;
+        }
+        
+        .star {
+            color: var(--joy-yellow);
+            font-size: 1.2rem;
+        }
+        
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Contenedor principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Encabezado inspirador */
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px 40px;
+            position: relative;
+        }
+        
+        .hero-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            color: var(--joy-yellow);
+            text-shadow: 0 0 20px rgba(255, 230, 109, 0.5);
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            color: var(--hope-green);
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-style: italic;
+        }
+        
+        .year-glow {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--love-red), var(--spirit-purple));
+            color: white;
+            font-size: 3rem;
+            font-weight: 800;
+            padding: 15px 40px;
+            border-radius: 50px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 3px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .year-glow::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: rotate(30deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: rotate(30deg) translateX(-100%); }
+            100% { transform: rotate(30deg) translateX(100%); }
+        }
+        
+        /* Mensaje principal */
+        .message-section {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 60px 50px;
+            margin: 40px 0;
+            border: 2px solid rgba(255, 107, 139, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .message-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, var(--love-red), var(--hope-green), var(--joy-yellow), var(--spirit-purple));
+        }
+        
+        .message-intro {
+            font-size: 1.5rem;
+            color: var(--warm-white);
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+        
+        .message-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        .message-block {
+            background: rgba(26, 83, 92, 0.4);
+            padding: 30px;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(78, 205, 196, 0.2);
+            position: relative;
+        }
+        
+        .message-block:hover {
+            transform: translateY(-10px);
+            border-color: var(--hope-green);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .message-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+            text-align: center;
+        }
+        
+        .message-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            color: var(--joy-yellow);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .message-text {
+            font-size: 1.2rem;
+            color: rgba(247, 255, 247, 0.9);
+            line-height: 1.7;
+        }
+        
+        .quote-container {
+            background: rgba(155, 93, 229, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 50px 0;
+            border-left: 5px solid var(--spirit-purple);
+            position: relative;
+        }
+        
+        .quote {
+            font-size: 1.8rem;
+            color: var(--warm-white);
+            font-style: italic;
+            text-align: center;
+            line-height: 1.6;
+            position: relative;
+        }
+        
+        .quote::before, .quote::after {
+            content: '"';
+            color: var(--joy-yellow);
+            font-size: 3rem;
+            position: absolute;
+        }
+        
+        .quote::before {
+            top: -20px;
+            left: -10px;
+        }
+        
+        .quote::after {
+            bottom: -40px;
+            right: -10px;
+        }
+        
+        /* Firma */
+        .signature-section {
+            text-align: center;
+            padding: 50px 20px;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .signature-box {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(255, 107, 139, 0.1), rgba(155, 93, 229, 0.1));
+            padding: 40px 60px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 230, 109, 0.3);
+            max-width: 600px;
+        }
+        
+        .signature-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--joy-yellow);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .family-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            color: var(--hope-green);
+            letter-spacing: 2px;
+        }
+        
+        .closing-wish {
+            font-size: 1.4rem;
+            color: var(--warm-white);
+            margin-top: 30px;
+            font-style: italic;
+        }
+        
+        /* Sección interactiva */
+        .interactive-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            padding: 60px 40px;
+            margin: 60px 0;
+            border: 2px dashed var(--hope-green);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .interactive-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            color: var(--joy-yellow);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .interactive-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--love-red), transparent);
+        }
+        
+        .challenge-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .challenge-card {
+            background: rgba(26, 26, 46, 0.7);
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .challenge-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            border-color: var(--spirit-purple);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .challenge-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--love-red);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .challenge-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            display: block;
+        }
+        
+        .challenge-title {
+            font-size: 1.8rem;
+            color: var(--hope-green);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .challenge-description {
+            font-size: 1.2rem;
+            color: rgba(247, 255, 247, 0.9);
+            line-height: 1.7;
+        }
+        
+        /* Área de compromiso */
+        .commitment-section {
+            background: rgba(255, 230, 109, 0.1);
+            padding: 50px;
+            border-radius: 20px;
+            margin: 60px 0;
+            text-align: center;
+            border: 2px solid var(--joy-yellow);
+        }
+        
+        .commitment-title {
+            font-size: 2.2rem;
+            color: var(--warm-white);
+            margin-bottom: 30px;
+        }
+        
+        .commitment-input {
+            width: 100%;
+            max-width: 700px;
+            height: 180px;
+            background: rgba(26, 26, 46, 0.7);
+            border: 2px solid var(--hope-green);
+            border-radius: 15px;
+            padding: 25px;
+            color: var(--warm-white);
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            resize: vertical;
+            font-family: 'Quicksand', sans-serif;
+            line-height: 1.6;
+        }
+        
+        .commitment-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.5);
+        }
+        
+        .commit-btn {
+            background: linear-gradient(45deg, var(--love-red), var(--spirit-purple));
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.4rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .commit-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .commitment-display {
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(26, 83, 92, 0.5);
+            border-radius: 15px;
+            border-left: 5px solid var(--joy-yellow);
+            display: none;
+            animation: fadeIn 1s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Pie de página */
+        .footer {
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 80px;
+            border-top: 1px solid rgba(255, 230, 109, 0.2);
+            position: relative;
+        }
+        
+        .final-message {
+            font-size: 2rem;
+            color: var(--hope-green);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+        }
+        
+        .blessing {
+            font-size: 1.8rem;
+            color: var(--joy-yellow);
+            font-family: 'Dancing Script', cursive;
+            margin-top: 40px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .year-glow {
+                font-size: 2.2rem;
+                padding: 12px 30px;
+            }
+            
+            .message-section, .interactive-section {
+                padding: 40px 25px;
+            }
+            
+            .signature-text {
+                font-size: 2.8rem;
+            }
+            
+            .interactive-title {
+                font-size: 2.2rem;
+            }
+            
+            .final-message {
+                font-size: 1.6rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .message-content, .challenge-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .signature-text {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Elementos decorativos flotantes -->
+    <div class="floating-hearts" id="hearts"></div>
+    <div class="twinkling-stars" id="stars"></div>
+    
+    <div class="container">
+        <!-- Encabezado inspirador -->
+        <header class="hero-section">
+            <h1 class="hero-title">Un Mensaje para tu Alma</h1>
+            <p class="hero-subtitle">En este umbral entre lo que fue y lo que será</p>
+            <div class="year-glow">2026</div>
+        </header>
+        
+        <!-- Mensaje principal primero -->
+        <section class="message-section">
+            <p class="message-intro">
+                Querido amig@, querida familia, mientras las luces de la Navidad brillan y el año nuevo se asoma en el horizonte, 
+                quiero compartir contigo una reflexión que ha estado creciendo en mi corazón...
+            </p>
+            
+            <div class="message-content">
+                <div class="message-block">
+                    <div class="message-icon">🌅</div>
+                    <h3 class="message-title">La Belleza del Presente</h3>
+                    <p class="message-text">El 2025 nos enseñó que los caminos difíciles forjan nuestra fortaleza, y que Dios nos sostiene en cada ascenso. No se trata solo de llegar a la cima, sino de valorar cada paso, aun los que nos dejaron sin aliento, sabiendo que Su mano nos guía. —Los momentos más simples, una taza de leche caliente, una llamada inesperada, un atardecer que nos detiene son pequeños recordatorios de Su cuidado y los que dan verdadero sabor y luz a nuestro viaje..</p>
+                </div>
+                
+                <div class="message-block">
+                    <div class="message-icon">💫</div>
+                    <h3 class="message-title">La Magia de lo Incierto</h3>
+                    <p class="message-text">El 2026 viene cargado de preguntas sin respuesta. Y eso está bien. Porque en el espacio entre lo conocido y lo misterioso es donde ocurre el verdadero crecimiento. Donde descubrimos fuerzas que no sabíamos que teníamos y encontramos caminos que no sabíamos que existían.</p>
+                </div>
+                
+                <div class="message-block">
+                    <div class="message-icon">🌱</div>
+                    <h3 class="message-title">La Esperanza Activa</h3>
+                    <p class="message-text">La verdadera esperanza no es solo desear que las cosas mejoren, sino convertirnos en agentes de ese cambio. Es la esperanza que se pone los guantes y trabaja, que siembra semillas aunque no vea el árbol, que cree en la luz aunque esté rodeada de sombras.</p>
+                </div>
+            </div>
+            
+            <div class="quote-container">
+                <p class="quote">
+                    Lo extraordinario no está en eventos grandiosos, sino en corazones que deciden servir a los demás, amar profundamente, 
+                    soñar audazmente y vivir auténticamente, día tras día.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Firma -->
+        <section class="signature-section">
+            <div class="signature-box">
+                <div class="signature-text">Con amor y gratitud,</div>
+                <div class="family-name">Familia Sánchez Silva</div>
+                <p class="closing-wish">Feliz Año Nuevo 2026</p>
+            </div>
+        </section>
+        
+        <!-- Ahora la sección interactiva -->
+        <section class="interactive-section">
+            <h2 class="interactive-title">Tu Invitación para el 2026</h2>
+            
+            <p style="font-size: 1.4rem; text-align: center; max-width: 800px; margin: 0 auto 50px; color: rgba(247, 255, 247, 0.9);">
+                Te invitamos a aceptar este reto de 21 días. No es una lista de tareas, sino una serie de pequeños recordatorios 
+                para reconectar con lo que realmente importa.
+            </p>
+            
+            <div class="challenge-container">
+                <div class="challenge-card">
+                    <div class="challenge-number">1</div>
+                    <div class="challenge-icon">🌄</div>
+                    <h3 class="challenge-title">Encuentra un Amanecer Interior</h3>
+                    <p class="challenge-description">Cada mañana, antes de revisar tu teléfono, encuentra un momento de quietud. Respira profundamente tres veces y visualiza una luz cálida llenando tu corazón. Solo 60 segundos que cambiarán tu día.</p>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-number">2</div>
+                    <div class="challenge-icon">💌</div>
+                    <h3 class="challenge-title">Envía un Mensaje del Alma</h3>
+                    <p class="challenge-description">Una vez a la semana, escribe a alguien que aprecies. No un mensaje rápido, sino unas líneas sinceras sobre lo que esa persona significa para ti. Sin esperar respuesta, solo dando.</p>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-number">3</div>
+                    <div class="challenge-icon">🌿</div>
+                    <h3 class="challenge-title">Planta una Semilla Simbólica</h3>
+                    <p class="challenge-description">Planta literalmente una semilla (una lenteja, un frijol) o simbólicamente (un nuevo hábito pequeño). Riégala con atención y observa cómo algo pequeño puede crecer con cuidado constante.</p>
+                </div>
+            </div>
+            
+            <div class="commitment-section">
+                <h3 class="commitment-title">Escribe tu Compromiso para el 2026</h3>
+                <p style="font-size: 1.3rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; color: rgba(247, 255, 247, 0.9);">
+                    ¿Qué promesa te harías a ti mismo para el próximo año? Algo que realmente te inspire y te conecte con tu mejor versión.
+                </p>
+                
+                <textarea class="commitment-input" id="commitmentInput" placeholder="Ejemplo: En 2026 me comprometo a escuchar más mi intuición, a celebrar los pequeños logros, a abrazar la imperfección como parte de la belleza humana..."></textarea>
+                
+                <button class="commit-btn" onclick="saveCommitment()">
+                    <i class="fas fa-feather-alt"></i> Guardar mi Compromiso
+                </button>
+                
+                <div id="commitmentDisplay" class="commitment-display"></div>
+            </div>
+        </section>
+        
+        <!-- Pie de página -->
+        <footer class="footer">
+            <p class="final-message">
+                Que el 2026 nos encuentre más humanos, más conectados con nuestra esencia, 
+                más valientes para amar y más sabios para soltar lo que ya no nos sirve.
+            </p>
+            
+            <div class="blessing">
+                Que la paz habite en tu hogar,<br>
+                la esperanza en tu corazón<br>
+                y el amor guíe cada uno de tus pasos.
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Crear corazones flotantes
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            const heartCount = 25;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤';
+                
+                // Tamaño aleatorio
+                const size = Math.random() * 30 + 20;
+                heart.style.fontSize = `${size}px`;
+                
+                // Posición inicial
+                heart.style.left = `${Math.random() * 100}vw`;
+                heart.style.top = `${Math.random() * 100 + 100}vh`;
+                
+                // Duración y retraso
+                const duration = Math.random() * 20 + 20;
+                const delay = Math.random() * 10;
+                heart.style.animationDuration = `${duration}s`;
+                heart.style.animationDelay = `${delay}s`;
+                
+                // Opacidad
+                heart.style.opacity = Math.random() * 0.5 + 0.3;
+                
+                heartsContainer.appendChild(heart);
+            }
+        }
+        
+        // Crear estrellas centelleantes
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 40;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.innerHTML = '✦';
+                
+                // Tamaño aleatorio
+                const size = Math.random() * 20 + 10;
+                star.style.fontSize = `${size}px`;
+                
+                // Posición inicial
+                star.style.left = `${Math.random() * 100}vw`;
+                star.style.top = `${Math.random() * 100}vh`;
+                
+                // Duración y retraso
+                const duration = Math.random() * 25 + 15;
+                const delay = Math.random() * 15;
+                star.style.animationDuration = `${duration}s`;
+                star.style.animationDelay = `${delay}s`;
+                
+                // Opacidad
+                star.style.opacity = Math.random() * 0.7 + 0.2;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+        
+        // Guardar compromiso
+        function saveCommitment() {
+            const commitmentInput = document.getElementById('commitmentInput');
+            const commitmentDisplay = document.getElementById('commitmentDisplay');
+            
+            if (commitmentInput.value.trim() === '') {
+                commitmentDisplay.innerHTML = `
+                    <div style="color: #FF6B8B; text-align: center; font-size: 1.2rem;">
+                        <i class="fas fa-exclamation-circle"></i> Escribe tu compromiso antes de guardarlo
+                    </div>
+                `;
+                commitmentDisplay.style.display = "block";
+                return;
+            }
+            
+            commitmentDisplay.innerHTML = `
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; color: #FFE66D; margin-bottom: 15px;">
+                        <i class="fas fa-star"></i> Tu Compromiso para 2026 <i class="fas fa-star"></i>
+                    </div>
+                    <div style="font-size: 1.4rem; line-height: 1.8; font-style: italic; background: rgba(0,0,0,0.2); padding: 25px; border-radius: 10px; margin: 20px 0;">
+                        "${commitmentInput.value}"
+                    </div>
+                    <div style="color: #4ECDC4; font-size: 1.2rem; margin-top: 20px;">
+                        <i class="fas fa-check-circle"></i> ¡Tu compromiso ha sido guardado! Te llegará un recordatorio por correo.
+                    </div>
+                    <div style="margin-top: 25px; padding: 15px; background: rgba(155, 93, 229, 0.1); border-radius: 10px; border-left: 4px solid #9B5DE5;">
+                        <strong>Recuerda:</strong> Los compromisos más poderosos son aquellos que honramos un día a la vez.
+                    </div>
+                </div>
+            `;
+            
+            commitmentDisplay.style.display = "block";
+            
+            // Guardar en localStorage
+            localStorage.setItem('commitment2026', commitmentInput.value);
+            
+            // Simular envío por correo
+            simulateEmail();
+            
+            // Limpiar el campo
+            commitmentInput.value = '';
+        }
+        
+        // Simular envío de correo
+        function simulateEmail() {
+            setTimeout(() => {
+                const display = document.getElementById('commitmentDisplay');
+                const currentContent = display.innerHTML;
+                
+                display.innerHTML = currentContent + `
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(255, 230, 109, 0.1); border-radius: 10px; border: 1px dashed #FFE66D;">
+                        <i class="fas fa-paper-plane"></i> <strong>Recordatorio programado:</strong> Recibirás este compromiso por correo el 1 de enero de 2026.
+                    </div>
+                `;
+            }, 1500);
+        }
+        
+        // Efecto de aparición secuencial
+        function animateElements() {
+            const elements = document.querySelectorAll('.message-block, .challenge-card, .quote-container');
+            
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 300 + (index * 200));
+            });
+        }
+        
+        // Efecto de escritura en el título
+        function typeWriterEffect() {
+            const title = document.querySelector('.hero-title');
+            const originalText = title.textContent;
+            title.textContent = '';
+            
+            let i = 0;
+            function typeWriter() {
+                if (i < originalText.length) {
+                    title.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 80);
+                }
+            }
+            
+            setTimeout(typeWriter, 800);
+        }
+        
+        // Efecto de brillo en el año
+        function glowYearEffect() {
+            const yearElement = document.querySelector('.year-glow');
+            setInterval(() => {
+                const colors = ['#FF6B8B', '#4ECDC4', '#FFE66D', '#9B5DE5'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                yearElement.style.background = `linear-gradient(45deg, ${randomColor}, var(--spirit-purple))`;
+            }, 3000);
+        }
+        
+        // Cargar compromiso guardado al cargar la página
+        window.onload = function() {
+            createHearts();
+            createStars();
+            typeWriterEffect();
+            glowYearEffect();
+            
+            // Animar elementos después de un retraso
+            setTimeout(animateElements, 1200);
+            
+            // Cargar compromiso guardado si existe
+            const savedCommitment = localStorage.getItem('commitment2026');
+            const commitmentDisplay = document.getElementById('commitmentDisplay');
+            
+            if (savedCommitment) {
+                commitmentDisplay.innerHTML = `
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; color: #4ECDC4; margin-bottom: 15px;">
+                            <i class="fas fa-history"></i> Tu Compromiso Guardado
+                        </div>
+                        <div style="font-size: 1.3rem; line-height: 1.7; font-style: italic; background: rgba(0,0,0,0.2); padding: 20px; border-radius: 10px;">
+                            "${savedCommitment}"
+                        </div>
+                        <div style="color: #FFE66D; margin-top: 15px; font-size: 1.1rem;">
+                            <i class="fas fa-clock"></i> Guardado anteriormente
+                        </div>
+                    </div>
+                `;
+                commitmentDisplay.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
